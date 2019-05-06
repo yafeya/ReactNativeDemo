@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 class Home extends React.Component {
   render() {
-    const friendElements = this.props.friends.current.map((friend) => <Text key={friend}>{friend}</Text>);
+    const friendElements = this.props.friends.current.map((friend) => <Text key={friend.name}>{friend.name}</Text>);
     return (
       <View style={styles.container}>
         <Text>We have {this.props.friends.current.length} friends!</Text>
