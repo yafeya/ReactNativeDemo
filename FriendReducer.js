@@ -1,5 +1,10 @@
 import { combineReducers } from 'redux';
-import { FETCHING_FRIENDS, FETCHING_FRIENDS_SUCCESS, FETCHING_FRIENDS_FAILURE, ADD_FRIEND } from './types';
+import {
+  FETCH_FRIENDS_PENDING,
+  FETCH_FRIENDS_FULFILLED,
+  FETCH_FRIENDS_REJECTED,
+  ADD_FRIEND
+} from './types';
 
 const INITIAL_STATE = {
   current: [],
@@ -11,20 +16,20 @@ const INITIAL_STATE = {
 
 const friendReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case FETCHING_FRIENDS:
+    case FETCH_FRIENDS_PENDING:
       return {
         ...state,
         possible: [],
         isFetching: true
       }
-    case FETCHING_FRIENDS_SUCCESS:
+    case FETCH_FRIENDS_FULFILLED:
       return {
         ...state,
-        possible: action.data,
+        possible: action.payload,
         isFetching: false,
         dataFetched: true
       }
-    case FETCHING_FRIENDS_FAILURE:
+    case FETCH_FRIENDS_REJECTED:
       return {
         ...state,
         isFetching: false,
