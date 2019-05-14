@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Alert, AppRegistry, Button, StyleSheet, View } from 'react-native';
 
 export default class App extends Component {
-  _onPressButton() {
+  _onPressButton(e) {
     Alert.alert('You tapped the button!')
   }
 
@@ -11,24 +11,24 @@ export default class App extends Component {
       <View style={styles.container}>
         <View style={styles.buttonContainer}>
           <Button
-            onPress={this._onPressButton}
+            onPress={e => this._onPressButton(e)}
             title="Press Me"
           />
         </View>
         <View style={styles.buttonContainer}>
           <Button
-            onPress={this._onPressButton}
+            onPress={e => this._onPressButton(e)}
             title="Press Me"
             color="#841584"
           />
         </View>
         <View style={styles.alternativeLayoutButtonContainer}>
           <Button
-            onPress={this._onPressButton}
+            onPress={e => this._onPressButton(e)}
             title="This looks great!"
           />
           <Button
-            onPress={this._onPressButton}
+            onPress={e => this._onPressButton(e)}
             title="OK!"
             color="#841584"
           />
