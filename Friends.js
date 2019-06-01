@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = (state) => {
-  const { friends } = state
-  return { friends }
+  const { friends, selecting } = state
+  return { friends, selecting }
 };
 
 const mapDispatchToProps = dispatch => (

@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import { ADD_FRIEND } from './types';
 
 const INITIAL_STATE = {
@@ -11,7 +10,7 @@ const INITIAL_STATE = {
   ],
 };
 
-const friendReducer = (state = INITIAL_STATE, action) => {
+export const friendReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case ADD_FRIEND:
       // Pulls current and possible out of previous state
@@ -34,7 +33,3 @@ const friendReducer = (state = INITIAL_STATE, action) => {
       return state;
   }
 };
-
-export default combineReducers({
-	friends: friendReducer,
-});
